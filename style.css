@@ -80,6 +80,11 @@ button i {
 }
 
 /* Pop up form */
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
 .form-popup {
     position: fixed;
     display: none;
@@ -92,7 +97,7 @@ button i {
     padding: 2rem;
     /* display: grid; */
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 15px;
 }
 
 .form-popup input[type="text"],
@@ -104,6 +109,13 @@ button i {
     border-radius: 5px;
 }
 
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-top: 10px;
+}
+
 .form-popup .btn {
     width: 40%;
     justify-self: center;
@@ -112,6 +124,8 @@ button i {
     border-radius: 5px;
     background-color: var(--ok-bg-color);
     cursor: pointer;
+    font-size: 1rem;
+    color: #ececec;
 }
 
 .form-popup .cancel {

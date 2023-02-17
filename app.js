@@ -1,7 +1,12 @@
 let myLibrary = [];
 
-function Book() {
-    // the constructor...
+function Book(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.info = function () {
+        return `${this.title} by ${this.author}, ${this.pages} pages.`;
+    };
 }
 
 function addBookToLibrary() {
@@ -28,4 +33,18 @@ addButton.addEventListener("click", () => {
 const cancelButton = document.querySelector(".cancel");
 cancelButton.addEventListener("click", () => {
     popUpForm.style.display = "none";
+});
+
+// Get data from from
+
+document.querySelector(".form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    console.log(formData.get("title"));
+    const newBook = new Book(
+        formData.get("title"),
+        formData.get("author"),
+        formData.get("pages")
+    );
+    myLibrary.push(newBook);
 });
