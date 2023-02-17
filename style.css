@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #f8ede3;
+  --text-color: #7d6e83;
+  --card-bg-color: #dfd3c3;
+  --details-color: #d0b8a8;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--main-color);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px;
+}
+
+.header h1 {
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--text-color);
+  display: inline;
+}
+
+.header svg {
+  height: 6rem;
+  fill: var(--text-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+button.add-book {
+  font-size: 3rem;
+  background-color: var(--details-color);
+  color: var(--main-color);
+  border: none;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
+
+button.add-book:hover {
+  background-color: var(--text-color);
+}
+
+button i {
+  margin-left: 3px;
+}
