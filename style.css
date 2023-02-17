@@ -1,77 +1,124 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  --main-color: #f8ede3;
-  --text-color: #7d6e83;
-  --card-bg-color: #dfd3c3;
-  --details-color: #d0b8a8;
+    --main-color: #f8ede3;
+    --text-color: #7d6e83;
+    --card-bg-color: #dfd3c3;
+    --details-color: #d0b8a8;
+    --ok-bg-color: #bfdb38;
+    --cancel-bg-color: #e64848;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--main-color);
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--main-color);
 }
 
 /* Header */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
 }
 
 .header h1 {
-  font-weight: 600;
-  font-size: 3rem;
-  color: var(--text-color);
-  display: inline;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--text-color);
+    display: inline;
 }
 
 .header svg {
-  height: 6rem;
-  fill: var(--text-color);
+    height: 6rem;
+    fill: var(--text-color);
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 button.add-book {
-  font-size: 3rem;
-  background-color: var(--details-color);
-  color: var(--main-color);
-  border: none;
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  cursor: pointer;
+    font-size: 3rem;
+    background-color: var(--details-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
 }
 
 button.add-book:hover {
-  background-color: var(--text-color);
+    background-color: var(--text-color);
 }
 
 button i {
-  margin-left: 3px;
+    margin-left: 3px;
 }
 
+/* Book Cards */
 .card-container {
-  border: 1px solid black;
-  display: grid;
-  padding: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    border: 1px solid black;
+    display: grid;
+    padding: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .first-card {
-  background-color: var(--card-bg-color);
-  border: 1px solid var(--details-color);
-  border-radius: 10px;
-  padding: 3rem 2rem;
-  text-align: center;
-  color: var(--text-color);
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--details-color);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Pop up form */
+.form-popup {
+    position: fixed;
+    display: none;
+    top: 30px;
+    right: 15px;
+    border: 3px solid var(--details-color);
+    border-radius: 10px;
+    background-color: #f5e9cf;
+    color: var(--text-color);
+    padding: 2rem;
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.form-popup input[type="text"],
+.form-popup input[type="tel"] {
+    border: none;
+    padding: 5px;
+    font-size: inherit;
+    background-color: var(--card-bg-color);
+    border-radius: 5px;
+}
+
+.form-popup .btn {
+    width: 40%;
+    justify-self: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--ok-bg-color);
+    cursor: pointer;
+}
+
+.form-popup .cancel {
+    background-color: var(--cancel-bg-color);
+}
+
+.form-popup .btn:hover,
+.form-popup .cancel:hover {
+    opacity: 0.8;
 }
