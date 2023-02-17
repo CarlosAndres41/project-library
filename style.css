@@ -59,3 +59,19 @@ button.add-book:hover {
 button i {
   margin-left: 3px;
 }
+
+.card-container {
+  border: 1px solid black;
+  display: grid;
+  padding: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.first-card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--details-color);
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
