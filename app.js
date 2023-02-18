@@ -12,6 +12,7 @@ function Book(title, author, pages) {
 function addBookToLibrary(array) {
     for (let index = 0; index < array.length; index++) {
         const card = document.createElement("div");
+        const toggleDiv = document.createElement("div");
         const delButton = document.createElement("button");
         const reading = document.createElement("span");
         const finished = document.createElement("span");
@@ -25,10 +26,11 @@ function addBookToLibrary(array) {
         finished.textContent = "Finished";
         finished.classList.add("finished");
         card.appendChild(document.createElement("br"));
-        card.appendChild(reading);
-        card.appendChild(finished);
+        toggleDiv.appendChild(reading);
+        toggleDiv.appendChild(finished);
+        card.appendChild(toggleDiv);
 
-        delButton.textContent = "Delete";
+        delButton.textContent = "x";
         delButton.classList.add("delete-book");
         delButton.addEventListener("click", () => {
             const book = document.getElementById(index);
@@ -38,7 +40,7 @@ function addBookToLibrary(array) {
                 array.splice(index, 1); // 2nd parameter means remove one item only
             } // Deletes item from myLibrary
         });
-        card.appendChild(delButton);
+        toggleDiv.appendChild(delButton);
         cardContainer.appendChild(card);
     }
 }

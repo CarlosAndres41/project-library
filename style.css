@@ -76,9 +76,45 @@ button i {
     background-color: var(--card-bg-color);
     border: 1px solid var(--details-color);
     border-radius: 10px;
-    padding: 3rem 2rem;
+    padding: 1rem 1rem;
     text-align: center;
     color: var(--text-color);
+}
+
+.book-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.book-card span {
+    font-size: 10px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.book-card .reading:hover {
+    color: #5bc0f8;
+    cursor: pointer;
+}
+
+.book-card .finished:hover {
+    color: #68b984;
+    cursor: pointer;
+}
+
+.book-card .delete-book {
+    font-size: 10px;
+    background-color: var(--details-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: 45%;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    justify-self: end;
+    margin-left: 10px;
 }
 
 /* Pop up form */
