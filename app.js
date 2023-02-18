@@ -11,10 +11,22 @@ function Book(title, author, pages) {
 
 function addBookToLibrary(array) {
     for (let index = 0; index < array.length; index++) {
-        const firstCard = document.createElement("div");
-        firstCard.textContent = array[index].info();
-        firstCard.classList.add("first-card");
-        cardContainer.appendChild(firstCard);
+        const card = document.createElement("div");
+        const delButton = document.createElement("button");
+        card.textContent = array[index].info();
+        card.classList.add("book-card");
+        card.setAttribute("id", index); //Set attribute to link to delete button
+        delButton.textContent = "Delete";
+        delButton.addEventListener("click", () => {
+            const book = document.getElementById(index);
+            book.parentElement.removeChild(book); //remove from DOM
+            if (index > -1) {
+                // only splice array when item is found
+                array.splice(index, 1); // 2nd parameter means remove one item only
+            } // Deleters item from myLibrary
+        });
+        card.appendChild(delButton);
+        cardContainer.appendChild(card);
     }
 }
 

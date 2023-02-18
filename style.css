@@ -71,7 +71,8 @@ button i {
     gap: 1rem;
 }
 
-.first-card {
+.first-card,
+.book-card {
     background-color: var(--card-bg-color);
     border: 1px solid var(--details-color);
     border-radius: 10px;
