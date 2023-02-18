@@ -57,12 +57,15 @@ function addBookToLibrary(array) {
             reading.classList.toggle("read-click");
             card.classList.remove("book-finished");
             finished.classList.remove("finished-click");
+            // Update array item status
+            array[index].status = "reading";
         });
         finished.addEventListener("click", () => {
             card.classList.toggle("book-finished");
             finished.classList.toggle("finished-click");
             card.classList.remove("book-read");
             reading.classList.remove("read-click");
+            array[index].status = "finished";
         });
 
         toggleDiv.appendChild(delButton);
