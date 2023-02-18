@@ -9,8 +9,13 @@ function Book(title, author, pages) {
     };
 }
 
-function addBookToLibrary() {
-    // do stuff here
+function addBookToLibrary(array) {
+    for (let index = 0; index < array.length; index++) {
+        const firstCard = document.createElement("div");
+        firstCard.textContent = array[index].info();
+        firstCard.classList.add("first-card");
+        cardContainer.appendChild(firstCard);
+    }
 }
 
 // Show and hide pop-up form
@@ -32,13 +37,18 @@ cancelButton.addEventListener("click", () => {
 document.querySelector(".form").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("title"));
     const newBook = new Book(
         formData.get("title"),
         formData.get("author"),
         formData.get("pages")
     );
     myLibrary.push(newBook);
+    if (myLibrary.length !== 0) {
+        cardContainer.innerHTML = "";
+    }
+    addBookToLibrary(myLibrary);
+    document.querySelector(".form").reset();
+    popUpForm.style.display = "none";
 });
 
 // Add book cards
