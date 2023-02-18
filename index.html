@@ -55,30 +55,31 @@
                     <label for="pages">Pages</label>
                     <input type="tel" name="pages" id="pages" required />
 
-                    <p>Reading Status</p>
-                    <div class="radio-buttons">
+                    <fieldset class="radio-buttons">
+                        <legend>Reading Status</legend>
                         <input
                             type="radio"
-                            name="reading"
+                            name="status"
                             id="reading"
-                            value="Reading"
+                            value="reading"
+                            checked
                         />
                         <label for="reading">Reading</label>
                         <input
                             type="radio"
-                            name="finished"
+                            name="status"
                             id="finished"
-                            value="Finished"
+                            value="finished"
                         />
                         <label for="finished">Finished</label>
                         <input
                             type="radio"
-                            name="to-read"
+                            name="status"
                             id="to-read"
                             value="to-read"
                         />
                         <label for="to-read">To Read</label>
-                    </div>
+                    </fieldset>
 
                     <div class="buttons">
                         <button type="submit" class="btn">Add</button>

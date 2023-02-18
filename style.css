@@ -62,6 +62,10 @@ button i {
     margin-left: 3px;
 }
 
+.radio-buttons {
+    padding: 10px;
+}
+
 /* Book Cards */
 .card-container {
     display: grid;
