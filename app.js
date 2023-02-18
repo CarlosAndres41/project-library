@@ -13,17 +13,30 @@ function addBookToLibrary(array) {
     for (let index = 0; index < array.length; index++) {
         const card = document.createElement("div");
         const delButton = document.createElement("button");
+        const reading = document.createElement("span");
+        const finished = document.createElement("span");
+
         card.textContent = array[index].info();
         card.classList.add("book-card");
         card.setAttribute("id", index); //Set attribute to link to delete button
+
+        reading.textContent = "Reading";
+        reading.classList.add("reading");
+        finished.textContent = "Finished";
+        finished.classList.add("finished");
+        card.appendChild(document.createElement("br"));
+        card.appendChild(reading);
+        card.appendChild(finished);
+
         delButton.textContent = "Delete";
+        delButton.classList.add("delete-book");
         delButton.addEventListener("click", () => {
             const book = document.getElementById(index);
             book.parentElement.removeChild(book); //remove from DOM
             if (index > -1) {
                 // only splice array when item is found
                 array.splice(index, 1); // 2nd parameter means remove one item only
-            } // Deleters item from myLibrary
+            } // Deletes item from myLibrary
         });
         card.appendChild(delButton);
         cardContainer.appendChild(card);
