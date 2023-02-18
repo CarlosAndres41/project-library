@@ -13,15 +13,7 @@ function addBookToLibrary() {
     // do stuff here
 }
 
-const cardContainer = document.querySelector(".card-container");
-
-if (myLibrary.length === 0) {
-    const firstCard = document.createElement("div");
-    firstCard.textContent =
-        "Your library is empty. Click on the + icon to add your first book.";
-    firstCard.classList.add("first-card");
-    cardContainer.appendChild(firstCard);
-}
+// Show and hide pop-up form
 
 const popUpForm = document.querySelector(".form-popup");
 
@@ -35,7 +27,7 @@ cancelButton.addEventListener("click", () => {
     popUpForm.style.display = "none";
 });
 
-// Get data from from
+// Get data from form and add a new book object to myLibrary
 
 document.querySelector(".form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -48,3 +40,15 @@ document.querySelector(".form").addEventListener("submit", (e) => {
     );
     myLibrary.push(newBook);
 });
+
+// Add book cards
+
+const cardContainer = document.querySelector(".card-container");
+
+if (myLibrary.length === 0) {
+    const firstCard = document.createElement("div");
+    firstCard.textContent =
+        "Your library is empty. Click on the + icon to add your first book.";
+    firstCard.classList.add("first-card");
+    cardContainer.appendChild(firstCard);
+}
