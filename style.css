@@ -64,7 +64,6 @@ button i {
 
 /* Book Cards */
 .card-container {
-    border: 1px solid black;
     display: grid;
     padding: 50px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -88,6 +87,14 @@ button i {
     font-weight: bold;
 }
 
+.book-card.book-read {
+    box-shadow: 3px 3px 2px 1px rgba(91, 192, 248, 0.6);
+}
+
+.book-card.book-finished {
+    box-shadow: 3px 3px 2px 1px rgba(104, 185, 132, 0.6);
+}
+
 .book-card span {
     font-size: 10px;
     font-weight: 300;
@@ -97,6 +104,14 @@ button i {
 .book-card .reading:hover {
     color: #5bc0f8;
     cursor: pointer;
+}
+
+.reading.read-click {
+    color: #5bc0f8;
+}
+
+.finished.finished-click {
+    color: #68b984;
 }
 
 .book-card .finished:hover {
@@ -115,6 +130,10 @@ button i {
     cursor: pointer;
     justify-self: end;
     margin-left: 10px;
+}
+
+.book-card .delete-book:hover {
+    background-color: var(--text-color);
 }
 
 /* Pop up form */

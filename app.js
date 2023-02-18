@@ -40,6 +40,20 @@ function addBookToLibrary(array) {
                 array.splice(index, 1); // 2nd parameter means remove one item only
             } // Deletes item from myLibrary
         });
+
+        reading.addEventListener("click", () => {
+            card.classList.toggle("book-read");
+            reading.classList.toggle("read-click");
+            card.classList.remove("book-finished");
+            finished.classList.remove("finished-click");
+        });
+        finished.addEventListener("click", () => {
+            card.classList.toggle("book-finished");
+            finished.classList.toggle("finished-click");
+            card.classList.remove("book-read");
+            reading.classList.remove("read-click");
+        });
+
         toggleDiv.appendChild(delButton);
         cardContainer.appendChild(card);
     }
