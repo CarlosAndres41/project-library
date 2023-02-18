@@ -20,6 +20,16 @@ function addBookToLibrary(array) {
 
         card.textContent = array[index].info();
         card.classList.add("book-card");
+
+        //Add style deppending on array[index].status
+        if (array[index].status === "reading") {
+            card.classList.add("book-read");
+            reading.classList.add("read-click");
+        } else if (array[index].status === "finished") {
+            card.classList.add("book-finished");
+            finished.classList.add("finished-click");
+        }
+
         card.setAttribute("id", index); //Set attribute to link to delete button
 
         reading.textContent = "Reading";
@@ -79,7 +89,6 @@ cancelButton.addEventListener("click", () => {
 document.querySelector(".form").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData);
     const newBook = new Book(
         formData.get("title"),
         formData.get("author"),
