@@ -67,6 +67,12 @@ function addBookToLibrary(array) {
 
         toggleDiv.appendChild(delButton);
         cardContainer.appendChild(card);
+
+        //Update footer to show statistics
+        const numberOfBooks = myLibrary.length;
+        document.querySelector(
+            "footer"
+        ).innerHTML = `You currently have ${numberOfBooks} book(s) in your library`;
     }
 }
 

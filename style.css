@@ -197,3 +197,9 @@ button i {
 .form-popup .cancel:hover {
     opacity: 0.8;
 }
+
+/* footer */
+footer {
+    text-align: center;
+    color: var(--details-color);
+}
